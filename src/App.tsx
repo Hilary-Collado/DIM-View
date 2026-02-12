@@ -1,4 +1,9 @@
 import { Activity, Microscope, Heart, Baby, Stethoscope, Radio, Eye, Scan } from 'lucide-react';
+import Contact from "./components/Contact.js";
+import Servicios from './components/Servicios.js';
+import Especialidades from './components/Especialidades.js';
+import Nosotros from './components/Nosotros.js';
+import AgendarCita from './components/Button.js';
 
 function App() {
   const scrollToSection = (id: string) => {
@@ -59,16 +64,10 @@ function App() {
               >
                 Ver Servicios
               </button>
-              <button
-                onClick={() => scrollToSection('contacto')}
-                className="border-2 border-[#B8D430] text-[#B8D430] px-8 py-4 rounded-full font-semibold hover:bg-[#B8D430] hover:text-[#002B5C] transition-all"
-              >
-                Agendar Cita
-              </button>
+              <AgendarCita 
+                />
             </div>
-            <p className="text-sm text-gray-400 mt-8">
-              +15 años de experiencia en diagnóstico por imágenes médicas
-            </p>
+            
           </div>
           <div className="relative">
             <div className="bg-gradient-to-br from-[#B8D430]/20 to-transparent rounded-3xl p-8 backdrop-blur-sm border border-[#B8D430]/30">
@@ -82,169 +81,14 @@ function App() {
         </div>
       </section>
 
-      <section id="servicios" className="py-20 bg-gradient-to-br from-[#B8D430] to-[#A4D233]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#002B5C] mb-4">Nuestros Servicios</h2>
-            <p className="text-xl text-[#002B5C]/80 max-w-3xl mx-auto">
-              Ofrecemos un amplio rango de estudios diagnósticos con tecnología de vanguardia y atención personalizada
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard
-              icon={<Baby className="w-12 h-12" />}
-              title="Sonografías"
-              description="Estudios obstétricos, ginecológicos, de mamas, abdominales y más con equipos de alta resolución."
-            />
-            <ServiceCard
-              icon={<Microscope className="w-12 h-12" />}
-              title="Biopsias"
-              description="Biopsias guiadas por ultrasonido de tiroides y mamas realizadas por especialistas."
-            />
-            <ServiceCard
-              icon={<Activity className="w-12 h-12" />}
-              title="Densitometría Ósea"
-              description="Evaluación precisa de la densidad mineral ósea para diagnóstico de osteoporosis."
-            />
-            <ServiceCard
-              icon={<Scan className="w-12 h-12" />}
-              title="Mamografía Digital"
-              description="Detección temprana de patologías mamarias con tecnología digital de última generación."
-            />
-            <ServiceCard
-              icon={<Heart className="w-12 h-12" />}
-              title="Estudios de Gestación"
-              description="Ecografías genéticas, morfológicas y seguimiento completo del embarazo."
-            />
-            <ServiceCard
-              icon={<Radio className="w-12 h-12" />}
-              title="Doppler"
-              description="Estudios doppler carotídeo y periférico para evaluación del flujo sanguíneo."
-            />
-          </div>
-        </div>
-      </section>
+      <Servicios />
 
-      <section id="especialidades" className="py-20 bg-gradient-to-br from-[#001A3D] to-[#002B5C] text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Especialidades Médicas</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Áreas especializadas con profesionales expertos dedicados a tu salud
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SpecialtyCard
-              icon={<Baby className="w-16 h-16" />}
-              title="Obstetricia"
-              description="Seguimiento integral del embarazo con ecografías 2D, 3D y 4D."
-            />
-            <SpecialtyCard
-              icon={<Heart className="w-16 h-16" />}
-              title="Ginecología"
-              description="Estudios especializados para la salud de la mujer."
-            />
-            <SpecialtyCard
-              icon={<Eye className="w-16 h-16" />}
-              title="Diagnóstico por Imágenes"
-              description="Tecnología de punta para diagnósticos precisos."
-            />
-            <SpecialtyCard
-              icon={<Stethoscope className="w-16 h-16" />}
-              title="Medicina Preventiva"
-              description="Detección temprana y prevención de enfermedades."
-            />
-          </div>
-        </div>
-      </section>
+      <Especialidades />
 
-      <section id="nosotros" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#002B5C] mb-6">¿Por qué elegir DIM?</h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Somos un centro de diagnóstico por imágenes comprometido con la excelencia médica, utilizando tecnología de última generación y contando con un equipo de profesionales altamente capacitados.
-              </p>
-              <div className="space-y-4">
-                <FeatureItem text="Equipos de última generación con tecnología digital" />
-                <FeatureItem text="Médicos especialistas certificados" />
-                <FeatureItem text="Resultados rápidos y precisos" />
-                <FeatureItem text="Atención personalizada y cálida" />
-                <FeatureItem text="Amplio horario de atención" />
-                <FeatureItem text="Convenios con principales obras sociales" />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              <StatCard number="15+" label="Años de Experiencia" />
-              <StatCard number="50K+" label="Pacientes Atendidos" />
-              <StatCard number="100%" label="Equipos Digitales" />
-              <StatCard number="24/7" label="Resultados Online" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Nosotros />
 
-      <section id="contacto" className="py-20 bg-gradient-to-br from-[#B8D430] to-[#A4D233]">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#002B5C] mb-4">Contactanos</h2>
-            <p className="text-xl text-[#002B5C]/80">
-              Estamos aquí para atenderte. Agenda tu cita hoy mismo.
-            </p>
-          </div>
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-bold text-[#002B5C] mb-6">Información de Contacto</h3>
-                <div className="space-y-4">
-                  <ContactItem
-                    icon={<Activity className="w-6 h-6" />}
-                    title="Teléfono"
-                    info="+54 11 1234-5678"
-                  />
-                  <ContactItem
-                    icon={<Microscope className="w-6 h-6" />}
-                    title="Email"
-                    info="info@dim-medica.com"
-                  />
-                  <ContactItem
-                    icon={<Heart className="w-6 h-6" />}
-                    title="Horarios"
-                    info="Lun-Vie: 8:00-20:00 | Sáb: 9:00-13:00"
-                  />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-[#002B5C] mb-6">Solicitar Información</h3>
-                <form className="space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Nombre completo"
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#B8D430] focus:outline-none transition-colors"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#B8D430] focus:outline-none transition-colors"
-                  />
-                  <textarea
-                    placeholder="Mensaje o consulta"
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#B8D430] focus:outline-none transition-colors"
-                  />
-                  <button
-                    type="submit"
-                    className="w-full bg-[#002B5C] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#001A3D] transition-colors shadow-lg"
-                  >
-                    Enviar Mensaje
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <Contact />
 
       <footer className="bg-[#001A3D] text-white py-12">
         <div className="max-w-7xl mx-auto px-6">
@@ -271,9 +115,10 @@ function App() {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-[#B8D430]">Contacto</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Tel: +54 11 1234-5678</li>
-                <li>Email: info@dim-medica.com</li>
-                <li>Lun-Vie: 8:00-20:00</li>
+                <li>Tel: +1 (809) 685-0579</li>
+                <li>Email: dimgazcue@gmail.com</li>
+                <li>Lunes - Viernes: 8:00 - 06:00</li>
+                <li>Sábados: 8:00 - 12:00</li>
               </ul>
             </div>
           </div>
@@ -286,45 +131,10 @@ function App() {
   );
 }
 
-function ServiceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <div className="bg-[#002B5C] text-white p-8 rounded-2xl shadow-xl hover:transform hover:scale-105 transition-all duration-300">
-      <div className="text-[#B8D430] mb-4">{icon}</div>
-      <h3 className="text-2xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-300 leading-relaxed">{description}</p>
-    </div>
-  );
-}
 
-function SpecialtyCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <div className="bg-gradient-to-br from-[#B8D430]/20 to-transparent backdrop-blur-sm border-2 border-[#B8D430]/30 p-6 rounded-2xl hover:border-[#B8D430] transition-all duration-300">
-      <div className="text-[#B8D430] mb-4 flex justify-center">{icon}</div>
-      <h3 className="text-xl font-bold mb-2 text-center">{title}</h3>
-      <p className="text-gray-300 text-sm text-center leading-relaxed">{description}</p>
-    </div>
-  );
-}
 
-function FeatureItem({ text }: { text: string }) {
-  return (
-    <div className="flex items-start space-x-3">
-      <div className="bg-[#B8D430] rounded-full p-1 mt-1">
-        <Activity className="w-4 h-4 text-[#002B5C]" />
-      </div>
-      <span className="text-gray-700">{text}</span>
-    </div>
-  );
-}
 
-function StatCard({ number, label }: { number: string; label: string }) {
-  return (
-    <div className="bg-gradient-to-br from-[#002B5C] to-[#003D7A] p-6 rounded-2xl text-center shadow-xl">
-      <div className="text-4xl font-bold text-[#B8D430] mb-2">{number}</div>
-      <div className="text-sm text-gray-300">{label}</div>
-    </div>
-  );
-}
+
 
 function ContactItem({ icon, title, info }: { icon: React.ReactNode; title: string; info: string }) {
   return (
