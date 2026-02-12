@@ -224,7 +224,8 @@ const Contact: React.FC = () => {
   });
 
   // const DEST_EMAIL = "hilarycollado001@gmail.com";
-  const DEST_EMAIL = "dimgazcue@gmail.com";
+  const DEST_EMAIL = "diamondrts@gmail.com";
+
   
   const [scriptsReady, setScriptsReady] = useState<boolean>(false);
 
