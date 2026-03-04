@@ -1,9 +1,8 @@
 const cleanPhone = (phone: String) => String(phone || "").replace(/[^\d]/g, "");
 
 const AgendarCita = () => {
-    const phone = "+18493583133"; 
-    const message = "Hola, quisiera obtener informacion...";
-    // position = "right",
+    const phone = "+18099144631"; 
+    const message = "Hola personal de DIM, quisiera obtener informacion acerca de...";
     const bottom = 24;
 
     const p = cleanPhone(phone);

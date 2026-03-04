@@ -131,21 +131,4 @@ function App() {
   );
 }
 
-
-
-
-
-
-function ContactItem({ icon, title, info }: { icon: React.ReactNode; title: string; info: string }) {
-  return (
-    <div className="flex items-start space-x-3">
-      <div className="bg-[#B8D430] text-[#002B5C] p-2 rounded-lg">{icon}</div>
-      <div>
-        <h4 className="font-semibold text-[#002B5C]">{title}</h4>
-        <p className="text-gray-600">{info}</p>
-      </div>
-    </div>
-  );
-}
-
 export default App;
